@@ -1,0 +1,12 @@
+express-handlebars 
+	es un motor de plantillas
+method-override
+	es para extender la funcionalidad de los formularios dandole el poder de enviar peticiones 
+	put y delete
+	Se configura como un middleware
+passport || passport-local
+	es para autentificarnos
+connect-flash
+	este modulo es para podr enviar mensajes entre multilples vistas
+	como esos mensaje de error que queremos devolver en caso de un dato no encontrado o una 
+	autentificacion no valida
