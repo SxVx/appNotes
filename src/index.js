@@ -3,7 +3,7 @@ const path = require('path');
 const exphbs = require('express-handlebars'); //motor de plantillas
 const methodOverride = require('method-override'); //extiende funcionalidades de formulario
 const session = require ('express-session'); //es una manera para guardar los datos de los usuarios
-
+const flash = require('connect-flash'); //Sirve para mandar multiples vistas
 // Initiliazations
 const app = express();
 require('./database');
@@ -31,8 +31,16 @@ app.use(session({
     resave : true,
     saveUninitialized : true
 }));
+app.use(flash());
 
 // Global Variables
+app.use((req,res,next)=>{
+    /*Necesitamos una forma de compartir mensajes entre las vistas que podemos manejar con flash*/
+    //Declaramos variables de forma globas
+    res.locals.succes_msg = req.flash('success_msg');
+    res.locals.error_msg = req.flash('error_msg');
+    next();
+});
 
 // Routes
 app.use(require('./routes/index'));

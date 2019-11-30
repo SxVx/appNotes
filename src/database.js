@@ -1,8 +1,8 @@
 const mongoose = require('mongoose');
+mongoose.set('useFindAndModify', false);
 
-mongoose.createConnection('mongodb+srv://<user>:<password>@cluster0-zrsf9.mongodb.net/test?retryWrites=true&w=majority',{
-    useCreateIndex : true,
-    useNewUrlParser :true,
+mongoose.connect('mongodb+srv://<<user>>:<<password>>@cluster0-zrsf9.mongodb.net/test?retryWrites=true&w=majority',{
+    useNewUrlParser : true,
     useUnifiedTopology : true,
 })
 .then(db => console.log('DB is connected'))
