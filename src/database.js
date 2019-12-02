@@ -6,4 +6,4 @@ mongoose.connect('mongodb+srv://<<user>>:<<password>>@cluster0-zrsf9.mongodb.net
     useUnifiedTopology : true,
 })
 .then(db => console.log('DB is connected'))
-.catch(err => console.log(err) );
+.catch(err => console.log("Error en conexion a base de datos",err) );
