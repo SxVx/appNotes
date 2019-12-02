@@ -4,9 +4,11 @@ const exphbs = require('express-handlebars'); //motor de plantillas
 const methodOverride = require('method-override'); //extiende funcionalidades de formulario
 const session = require ('express-session'); //es una manera para guardar los datos de los usuarios
 const flash = require('connect-flash'); //Sirve para mandar multiples vistas
+const passport = require('passport');
 // Initiliazations
 const app = express();
 require('./database');
+require('./config/passport');
 
 // Settings
 app.set('port',process.env.PORT || 4200);
@@ -32,6 +34,10 @@ app.use(session({
     saveUninitialized : true
 }));
 
+
+app.use(passport.initialize());
+app.use(passport.session());
+
 app.use(flash());
 
 // Global Variables
@@ -40,6 +46,7 @@ app.use((req,res,next)=>{
     //Declaramos variables de forma globas
     res.locals.success_msg = req.flash('success_msg');
     res.locals.error_msg = req.flash('error_msg');
+    res.locals.error = req.flash('error');
     next();
 });
 

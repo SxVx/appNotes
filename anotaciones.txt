@@ -5,7 +5,7 @@ method-override
 	put y delete
 	Se configura como un middleware
 passport || passport-local
-	es para autentificarnos
+	es para autentificarnos, podemos autentificar usuarios desde git,faceboock, google
 connect-flash
 	este modulo es para podr enviar mensajes entre multilples vistas
 	como esos mensaje de error que queremos devolver en caso de un dato no encontrado o una 
