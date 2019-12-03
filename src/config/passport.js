@@ -23,7 +23,7 @@ passport.use(new LocalStrategy({
 //Lo que hace serialize es tomar un usuario y un callback
 passport.serializeUser((user,done)=>{
     //vamos a ejecutar el callback
-    done(null. user.id);
+    done(null, user.id);
 });
 
 //Lo que hace esto es tomar el id y genera un usuario para poder usar sus datos

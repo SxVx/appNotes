@@ -10,3 +10,9 @@ connect-flash
 	este modulo es para podr enviar mensajes entre multilples vistas
 	como esos mensaje de error que queremos devolver en caso de un dato no encontrado o una 
 	autentificacion no valida
+
+Al momento de reiniciar el server se pierden las sesiones.
+
+El truco para traer las notas del usuario (filtradas solo las suyas) es pasarle un dato que
+al Modelo de Notes que relacione al usuario con la nota y para encontrarlos lo hacemos con su
+condicion en find.
