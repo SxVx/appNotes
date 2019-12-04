@@ -10,6 +10,11 @@ connect-flash
 	este modulo es para podr enviar mensajes entre multilples vistas
 	como esos mensaje de error que queremos devolver en caso de un dato no encontrado o una 
 	autentificacion no valida
+express-session
+	sirve para poder usar sesiones en node al pasar 
+	la instancia de sesiones -> app.use(({secret : 'mysecretseeder',resave : true, saveUninitialized : true })); <- Donde session es instancia de express-sesiones
+	entonces ahora session vive en -> req.sessions.my_variable = "Hello word"; <- Declaramos una variable de sesion
+	eliminamos una variable de session ->  delete req.sessions.my_variable
 
 Al momento de reiniciar el server se pierden las sesiones.
 
